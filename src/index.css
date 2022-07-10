@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -10,11 +12,39 @@
   --twitter-bg: #e6ecf0;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 /* 
 
 SIDEBAR
 
 */
+
+.sidebar {
+  border-right: 1px solid var(--twitter-bg);
+  flex: 0.3;
+  min-width: 250px;
+  margin-top: 24px;
+  padding: 0 24px;
+}
+
+.sidebar .twitter__icon {
+  color: var(--twitter-color);
+  font-size: 30px !important;
+  margin: 0 0 24px 24px;
+}
 
 .sidebar__option {
   display: flex;
@@ -35,10 +65,104 @@ SIDEBAR
 
 .sidebar__option h2 {
   font-weight: 800;
-  font-size: 20px;
+  font-size: 21px;
   margin-right: 24px;
 }
 
 .sidebar__option--active {
   color: var(--twitter-color);
+}
+
+.sidebar .MuiButton-root {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-size: 18px !important;
+  text-transform: inherit !important;
+  border-radius: 9999px !important;
+  height: 60px !important;
+  margin-top: 24px !important;
+  max-width: 150px;
+}
+
+/* 
+
+FEED
+
+*/
+
+main {
+  flex: 0.4;
+  border-right: 1px solid var(--twitter-bg);
+  min-width: fit-content;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+.feed__header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 9999;
+  border: 1px solid var(--twitter-bg);
+  padding: 16px 24px;
+}
+
+.feed__header h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.tweet__box {
+  padding: 0 8px 8px 0;
+  border-bottom: 8px solid var(--twitter-bg);
+}
+
+.tweet__box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet__box-input {
+  padding: 24px;
+  display: flex;
+}
+
+.tweet__box-input input {
+  flex: 1;
+  margin-left: 24px;
+  font-size: 20px;
+}
+
+.tweet__box--btn {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 9999px !important;
+  height: 45px !important;
+  margin: 24px 0 0 auto !important;
+  width: 100% !important;
+  max-width: 100px !important;
+}
+
+.tweet__box input:nth-child(2) {
+  padding: 8px;
+}
+
+/* 
+
+WIDGETS
+
+*/
+
+.widgets {
+  flex: 0.3;
 }

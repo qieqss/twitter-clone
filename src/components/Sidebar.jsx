@@ -8,6 +8,7 @@ import {
   BookmarkBorder,
   NotificationsNone,
   Twitter,
+  PostAdd,
 } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React from "react";
@@ -15,8 +16,8 @@ import SidebarOption from "./SidebarOption";
 
 const Sidebar = () => {
   return (
-    <aside>
-      <Twitter />
+    <aside className="sidebar">
+      <Twitter className="twitter__icon" />
 
       <SidebarOption active Icon={Home} text="Home" />
       <SidebarOption Icon={Tag} text="Explore" />
@@ -27,7 +28,9 @@ const Sidebar = () => {
       <SidebarOption Icon={PermIdentity} text="Profile" />
       <SidebarOption Icon={MoreHoriz} text="More" />
 
-      <Button>Tweet</Button>
+      <Button startIcon={<PostAdd />} variant="outlined" fullWidth>
+        Tweet
+      </Button>
     </aside>
   );
 };
